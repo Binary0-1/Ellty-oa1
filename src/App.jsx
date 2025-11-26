@@ -9,21 +9,21 @@ function App() {
   ];
 
   return (
-    <div className="parent">
-      <div className="form">
-        <div className="main">
-          <div className="header">
+    <div className="app-container">
+      <div className="page-selector-widget">
+        <div className="page-selector-widget__main">
+          <div className="page-selector-widget__header">
             <CheckBoxWithLabel id="header" title={"All Pages"} />
           </div>
-          <hr className="generic-seperator"/>
-          <div className="checkboxes-container">
+          <hr className="generic-separator"/>
+          <div className="page-selector-widget__options">
             {checkboxes.map((item) => {
               return <CheckBoxWithLabel id={item.id} title={item.label} />;
             })}
           </div>
-          <hr className="generic-seperator"/>
+          <hr className="generic-separator"/>
         </div>
-        <button type="button" className="cta">Done</button>
+        <button type="button" className="page-selector-widget__cta">Done</button>
       </div>
     </div>
   );
