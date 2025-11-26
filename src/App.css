@@ -1,0 +1,136 @@
+.body {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.parent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.generic-seperator {
+  border-color: rgba(238, 238, 238, 1);
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.form {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 644px;
+  box-shadow: 0px 8px 15px 0px rgba(20, 20, 20, 0.12);
+  border-radius: 6px;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 1);
+}
+
+.main {
+  width: 100%;
+}
+
+.header {
+  input {
+    width: 100%;
+    padding: 0px;
+  }
+}
+
+.checkboxes-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  input {
+    width: 100%;
+    padding: 0px;
+  }
+}
+
+.cta {
+  background: rgba(255, 206, 34, 1);
+  width: 100%;
+  height: 40px;
+  border-radius: 4px;
+  padding: 10px 20px 10px 20px;
+  border: none;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  transition: background-color 0.25s ease;
+}
+
+.cta:hover {
+  background: rgba(255, 216, 77, 1);
+}
+
+.checkbox-with-label {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 10px 8px 10px;
+  height: 42px;
+  align-items: center;
+
+  input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  label {
+    cursor: pointer;
+    user-select: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #bdbdbd;
+    border-radius: 6px;
+    position: relative;
+    outline: 2px solid transparent;
+    outline-offset: 0;
+    transition: outline-color 0.25s ease, outline-offset 0.25s ease,
+      background-color 0.25s ease;
+  }
+
+  label::before {
+    content: "";
+    position: absolute;
+    height: 11px;
+    width: 5px;
+    border-bottom: 1px solid rgba(135, 135, 135, 1);
+    border-right: 1px solid rgba(135, 135, 135, 1);
+    transform: rotate(45deg);
+    top: 2px;
+    left: 6px;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+
+  label:hover::before {
+    opacity: 1;
+  }
+
+  label:hover {
+    outline-color: #eaf0fe;
+    outline-offset: 0;
+  }
+
+  input[type="checkbox"]:checked + label {
+    background: #2469f6;
+    border: none;
+  }
+
+  input[type="checkbox"]:checked + label:hover {
+    background: #5087f8;
+    border: none;
+  }
+
+  input[type="checkbox"]:checked + label::before {
+    opacity: 1;
+    border-bottom-color: white;
+    left: 7px;
+    top: 3px;
+    border-right-color: white;
+  }
+}
